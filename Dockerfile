@@ -15,8 +15,7 @@ RUN apt-get update && apt-get install -y \
 RUN a2enmod rewrite
 
 # 프로젝트 파일 복사
-COPY . /var/www/html
-
+COPY frontend/ /var/www/html/
 # 권한 설정
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
